@@ -3,347 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Curtis Dilday II - Professional Educator Portfolio</title>
+    <title>James Curtis Dilday II - CV</title>
     <style>
         :root {
-            --primary: #1e293b;
-            --accent: #2563eb;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --text: #334155;
-            --border: #e2e8f0;
+            --primary-color: #1e293b;
+            --accent-color: #2563eb;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #cbd5e1;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            padding: 20px;
         }
 
-        .header {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2.5rem 1rem;
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .headshot {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border: 3px solid var(--accent-color);
         }
 
-        .header h1 {
-            margin: 10px 0 5px;
-            font-size: 2.2rem;
+        .header-text h1 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+            font-size: 2rem;
         }
 
-        .header p {
-            margin: 5px 0;
-            opacity: 0.9;
-        }
-
-        .contact-bar {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+        .contact-info {
             font-size: 0.95rem;
+            color: #475569;
         }
 
-        .contact-bar a {
-            color: #60a5fa;
+        .contact-info a {
+            color: var(--accent-color);
             text-decoration: none;
         }
 
-        .contact-bar a:hover {
+        .contact-info a:hover {
             text-decoration: underline;
         }
 
-        .nav-bar {
-            background: #0f172a;
-            padding: 10px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-bar a {
-            color: #e2e8f0;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .nav-bar a:hover {
-            color: #38bdf8;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-            border: 1px solid var(--border);
-        }
-
         h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 8px;
-            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .badge {
-            background-color: #dbeafe;
-            color: #1e40af;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.85rem;
+        .job-block {
+            margin-bottom: 16px;
+        }
+
+        .job-header {
             font-weight: bold;
-            display: inline-block;
-            margin-right: 5px;
+            color: var(--primary-color);
         }
 
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #0f172a;
-        }
-
-        .job-company {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .job-date {
+        .job-sub {
+            font-style: italic;
             color: #64748b;
-            font-size: 0.9rem;
-            float: right;
-        }
-
-        .job-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .job-item:last-child {
-            border-bottom: none;
+            margin-bottom: 4px;
         }
 
         ul {
+            margin: 5px 0 10px 0;
             padding-left: 20px;
-            margin-top: 8px;
         }
 
         li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-box {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 6px;
-        }
-
-        .skill-box h4 {
-            margin: 0 0 8px 0;
-            color: var(--primary);
-        }
-
-        @media (max-width: 600px) {
-            .job-date {
-                float: none;
-                display: block;
-                margin-top: 2px;
-            }
+        .skills-list {
+            list-style-type: square;
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <img src="James%20Curtis%20Dilday%20II%20-%20Recent%20Photo.jpg" alt="James Curtis Dilday II" class="profile-img">
-        <h1>James Curtis Dilday II</h1>
-        <p>Fully Licensed US Educator | Chemistry, Physics, Biology & ESOL</p>
-        
-        <div class="contact-bar">
-            <span>📍 Ho Chi Minh City, Vietnam</span>
-            <span>|</span>
-            <span>✉️ <a href="#" id="email-link">Loading email...</a></span>
-            <span>|</span>
-            <span>🔗 <a href="https://www.linkedin.com/in/james-curtis-dilday-ii-90135315/" target="_blank">LinkedIn Profile</a></span>
+<div class="cv-container">
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <img src="James%20Curtis%20Dilday%20II%20-%20Recent%20Photo.jpg" alt="James Curtis Dilday II" class="headshot">
+        <div class="header-text">
+            <h1>James Curtis Dilday II</h1>
+            <div class="contact-info">
+                📍 Ho Chi Minh City, Vietnam<br>
+                🌐 <a href="https://jamescurtisdildayii.com" target="_blank">jamescurtisdildayii.com</a><br>
+                ✉️ <a href="#" id="email-link">Loading email...</a>
+            </div>
         </div>
-
-            <script>
-              // Reconstructs email dynamically so spam crawlers can't harvest it
-              const user = "jamescurtisdildayii";
-              const domain = "gmail.com";
-              const element = document.getElementById("email-link");
-              element.href = "mailto:" + user + "@" + domain;
-              element.innerHTML = user + "@" + domain;
-            </script>
-    </header>
-
-    <nav class="nav-bar">
-        <a href="#overview">Overview</a>
-        <a href="#credentials">Credentials</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-    </nav>
-
-    <div class="container">
-
-        <!-- Professional Overview -->
-        <section id="overview" class="card">
-            <h2>Professional Overview</h2>
-            <p>
-                Fully licensed US educator holding an active <strong>District of Columbia Standard Educator Credential</strong> in <strong>Chemistry (Grades 7–12)</strong> with endorsements in <strong>English to Speakers of Other Languages (ESOL)</strong>, <strong>Biology</strong>, and <strong>Physics</strong>. Holds a prestigious <strong>Cambridge CELTA (Pass B)</strong> certification. Based in Ho Chi Minh City with a valid TRC (Work Permit Exemption eligible) and available for immediate start.
-            </p>
-        </section>
-
-        <!-- Education & Credentials -->
-        <section id="credentials" class="card">
-            <h2>Education & Professional Credentials</h2>
-            
-            <div class="job-item">
-                <div class="job-title">District of Columbia Standard Educator Credential</div>
-                <div class="job-company">Active Licensure</div>
-                <p>Endorsements: Secondary Chemistry (7-12), ESOL, Biology, Physics</p>
-            </div>
-
-            <div class="job-item">
-                <div class="job-title">Cambridge CELTA (Certificate in Teaching English to Speakers of Other Languages)</div>
-                <div class="job-company">University of Cambridge / ILA Vietnam <span class="badge">Pass B</span></div>
-                <div class="job-date">March 2012</div>
-                <p>Awarded Pass B for superior lesson planning, classroom management, logical staging, and language analysis skills.</p>
-            </div>
-
-            <div class="job-item">
-                <div class="job-title">Graduate Teacher Preparation Certificate — Secondary Chemistry</div>
-                <div class="job-company">Moreland University</div>
-                <div class="job-date">2026 | GPA: 3.98</div>
-            </div>
-
-            <div class="job-item">
-                <div class="job-title">Bachelor of Science in Biology (General Biology Concentration)</div>
-                <div class="job-company">University of Arkansas at Little Rock</div>
-                <div class="job-date">2006 | Cum Laude (GPA: 3.59)</div>
-                <p>Minor in Chemistry</p>
-            </div>
-        </section>
-
-        <!-- Teaching & Clinical Experience -->
-        <section id="experience" class="card">
-            <h2>Teaching & Professional Experience</h2>
-
-            <div class="job-item">
-                <span class="job-date">Jan 2026 – Apr 2026</span>
-                <div class="job-title">Student Teacher (Clinical Practice)</div>
-                <div class="job-company">Stellar Virtual</div>
-                <ul>
-                    <li>Completed 12 weeks of supervised teaching practice in Secondary Chemistry, evaluated against InTASC standards.</li>
-                    <li>Designed and delivered virtual science lessons, utilizing digital tools to engage students and assess learning progress.</li>
-                    <li>Managed virtual learning environments and collaborated with mentor teachers to refine pedagogical strategies.</li>
-                </ul>
-            </div>
-
-            <div class="job-item">
-                <span class="job-date">2021 – 2026</span>
-                <div class="job-title">Online STEM & Science Educator</div>
-                <div class="job-company">AmazingTalker</div>
-                <ul>
-                    <li>Created personalized curricula and managed student relationships across MYP/IB Chemistry, Physics, Biology, IELTS, and General English.</li>
-                </ul>
-            </div>
-
-            <div class="job-item">
-                <span class="job-date">2020 – 2021</span>
-                <div class="job-title">Substitute Teacher</div>
-                <div class="job-company">International School Ho Chi Minh City (ISHCMC), Vietnam</div>
-                <ul>
-                    <li>Fulfilled instructional duties for absent staff while maintaining a safe, engaging, and structured learning environment.</li>
-                </ul>
-            </div>
-
-            <div class="job-item">
-                <span class="job-date">2015 – 2018</span>
-                <div class="job-title">Test Prep & English Teacher</div>
-                <div class="job-company">Yola, Vietnam</div>
-                <ul>
-                    <li>Taught rigorous IELTS and TOEFL preparation courses for students aged 16–22.</li>
-                    <li>Delivered communicative English lessons to young learners aged 8–16.</li>
-                </ul>
-            </div>
-
-            <div class="job-item">
-                <span class="job-date">2014 – 2015</span>
-                <div class="job-title">Science Tutor</div>
-                <div class="job-company">Ivy Language Center, Vietnam</div>
-                <ul>
-                    <li>Designed and implemented customized science courses preparing international middle and high school students for SAT, ACT, IGCSE, and IB exams.</li>
-                </ul>
-            </div>
-
-            <div class="job-item">
-                <span class="job-date">2011 – 2014</span>
-                <div class="job-title">Head Teacher & Educator</div>
-                <div class="job-company">Cleverlearn, Vietnam</div>
-                <ul>
-                    <li>Recruited, trained, and managed a teaching staff of 30 educators while developing custom curricula.</li>
-                    <li>Delivered specialized English and IELTS instruction to government officials in Ninh Thuan province.</li>
-                </ul>
-            </div>
-
-            <div class="job-item">
-                <span class="job-date">2008 – 2011</span>
-                <div class="job-title">English Educator</div>
-                <div class="job-company">Iksan, South Korea</div>
-                <ul>
-                    <li>Taught language skills to diverse learner cohorts from Kindergarten to Adult in structured classroom settings.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Skills & Abilities -->
-        <section id="skills" class="card">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <h4>Pedagogy & Teaching</h4>
-                    <p>Inquiry-based STEM instruction, InTASC Alignment, Lesson Design, Curriculum Development, Classroom Management, Test Prep (IELTS, TOEFL, IB, SAT, IGCSE).</p>
-                </div>
-                <div class="skill-box">
-                    <h4>Technical & Web</h4>
-                    <p>HTML, CSS, JavaScript, Web Design, GitHub Pages, AI Integration, Adobe Creative Cloud, Microsoft Office Suite, Remote Learning Platforms.</p>
-                </div>
-            </div>
-        </section>
-
     </div>
+
+    <!-- Overview -->
+    <h2>Overview</h2>
+    <p>
+        Fully licensed US educator holding an Active District of Columbia Standard Educator Credential in Chemistry (Grades 7 to 12) with Endorsements in English to Speakers of Other Languages (ESOL), Biology, and Physics. Cambridge CELTA (Pass B) certified instructor with over 15 years of international teaching and curriculum development experience. Based in Ho Chi Minh City with a valid TRC (Work Permit Exemption eligible) and available for an immediate start.
+    </p>
+
+    <!-- Education & Credentials -->
+    <h2>Education & Credentials</h2>
+    <ul>
+        <li>
+            <strong>District of Columbia Standard Educator Credential</strong> — Active Licensure
+            <ul>
+                <li><em>Endorsements:</em> Secondary Chemistry (Grades 7–12), ESOL, Biology, Physics</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Cambridge CELTA (Certificate in Teaching English to Speakers of Other Languages)</strong> | University of Cambridge / ILA Vietnam (2012)
+            <ul>
+                <li><em>Grade:</em> <strong>Pass B</strong> (Demonstrated superior lesson planning, classroom management, logical staging, and language analysis)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Graduate Teacher Preparation Certificate — Secondary Chemistry</strong> | Moreland University (2026)
+            <ul>
+                <li><em>GPA:</em> 3.98</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Bachelor of Science in Biology (General Biology Concentration)</strong> | University of Arkansas at Little Rock (2006)
+            <ul>
+                <li><em>Honors:</em> Cum Laude (GPA: 3.59) | <em>Minor:</em> Chemistry</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Work Experience -->
+    <h2>Work Experience</h2>
+
+    <div class="job-block">
+        <div class="job-header">Student Teacher (Clinical Practice) | Stellar Virtual</div>
+        <div class="job-sub">Jan 2026 – Apr 2026</div>
+        <ul>
+            <li>Completed 12 weeks of supervised teaching practice in Secondary Chemistry, evaluated against InTASC standards.</li>
+            <li>Designed and delivered virtual science lessons, utilizing digital tools to engage students and assess learning progress.</li>
+            <li>Managed the virtual learning environment and collaborated with a mentor teacher to refine pedagogical strategies and classroom management.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">Online STEM & Science Educator | AmazingTalker</div>
+        <div class="job-sub">2021 – 2026</div>
+        <ul>
+            <li>Created personalized lesson plans and directly managed student relationships and progress tracking.</li>
+            <li>Delivered instruction in MYP/IB Chemistry, Physics, Biology, IELTS, and General English to diverse international learners.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">Substitute Teacher | International School Ho Chi Minh City (ISHCMC), Vietnam</div>
+        <div class="job-sub">2020 – 2021</div>
+        <ul>
+            <li>Fulfilled instructional duties of absent teachers while ensuring a safe, structured learning environment.</li>
+            <li>Implemented lesson plans with fidelity, supervised students, took attendance, and collaborated with school staff.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">Test Prep & English Teacher | Yola, Vietnam</div>
+        <div class="job-sub">2015 – 2018</div>
+        <ul>
+            <li>Instructed students aged 16–22 in standardized test preparation for IELTS and TOEFL.</li>
+            <li>Taught Young Learners classes (ages 8–16) utilizing communicative and age-appropriate pedagogical methods.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">Science Tutor | Ivy Language Center, Vietnam</div>
+        <div class="job-sub">2014 – 2015</div>
+        <ul>
+            <li>Designed and implemented personalized science courses for middle and high school students preparing for SAT, ACT, IGCSE, and IB examinations.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">Head Teacher & Educator | Cleverlearn, Vietnam</div>
+        <div class="job-sub">2011 – 2014</div>
+        <ul>
+            <li>Recruited, trained, and managed a teaching staff of 30 educators while developing custom curricula.</li>
+            <li>Taught Elementary, Pre-Intermediate, and IELTS preparation courses to government officials in Ninh Thuan province.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">English Teacher | Phan Rang, Vietnam</div>
+        <div class="job-sub">2011 – 2012</div>
+        <ul>
+            <li>Taught government officials in structured language programs designed to rapidly advance English proficiency.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <div class="job-header">English Teacher | Iksan, South Korea</div>
+        <div class="job-sub">2008 – 2011</div>
+        <ul>
+            <li>Delivered English instruction to students ranging from Kindergarten to Adult across all proficiency levels.</li>
+        </ul>
+    </div>
+
+    <!-- Skills & Core Competencies -->
+    <h2>Skills & Core Competencies</h2>
+    <ul class="skills-list">
+        <li><strong>Teaching & Pedagogy:</strong> Inquiry-based STEM Instruction, InTASC Alignment, Lesson Design, Curriculum Development, Classroom Management, Assessment & Progress Monitoring.</li>
+        <li><strong>Subject Matter Expertise:</strong> Secondary Chemistry, Physics & Biology (MYP/IB), ESOL / IELTS / TOEFL Preparation.</li>
+        <li><strong>Technical Skills:</strong> HTML, CSS, JavaScript, Web Design, GitHub Pages, Google Workspace/Classroom, Learning Management Systems (LMS), AI Tutoring Tools, Adobe Creative Cloud, Microsoft Office Suite.</li>
+    </ul>
+
+</div>
+
+<script>
+    // Bot-protected email script
+    const user = "jamescurtisdildayii";
+    const domain = "gmail.com";
+    const element = document.getElementById("email-link");
+    element.href = "mailto:" + user + "@" + domain;
+    element.innerHTML = user + "@" + domain;
+</script>
 
 </body>
 </html>
