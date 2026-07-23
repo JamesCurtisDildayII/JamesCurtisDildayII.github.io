@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Curtis Dilday II - CV</title>
+    <title>James Curtis Dilday II - Professional CV</title>
     <style>
         :root {
             --primary-color: #1e293b;
@@ -14,13 +14,17 @@
             --border-color: #cbd5e1;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
+            padding: 20px 10px;
         }
 
         .cv-container {
@@ -48,6 +52,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent-color);
+            flex-shrink: 0;
         }
 
         .header-text h1 {
@@ -59,11 +64,13 @@
         .contact-info {
             font-size: 0.95rem;
             color: #475569;
+            line-height: 1.8;
         }
 
         .contact-info a {
             color: var(--accent-color);
             text-decoration: none;
+            font-weight: bold;
         }
 
         .contact-info a:hover {
@@ -82,18 +89,20 @@
         }
 
         .job-block {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .job-header {
             font-weight: bold;
             color: var(--primary-color);
+            font-size: 1.05rem;
         }
 
         .job-sub {
             font-style: italic;
             color: #64748b;
             margin-bottom: 4px;
+            font-size: 0.9rem;
         }
 
         ul {
@@ -102,11 +111,46 @@
         }
 
         li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .skills-list {
             list-style-type: square;
+        }
+
+        /* MOBILE MEDIA QUERY (Applies to phones under 600px width) */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px 5px;
+            }
+
+            .cv-container {
+                padding: 20px 15px;
+                border-radius: 6px;
+            }
+
+            .header-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .headshot {
+                width: 110px;
+                height: 110px;
+            }
+
+            .header-text h1 {
+                font-size: 1.6rem;
+            }
+
+            .contact-info {
+                font-size: 0.9rem;
+            }
+
+            ul {
+                padding-left: 18px;
+            }
         }
     </style>
 </head>
@@ -116,6 +160,7 @@
 
     <!-- Header Section -->
     <div class="header-section">
+        <!-- Be sure to change the src below to your exact image file name if it differs -->
         <img src="James%20Curtis%20Dilday%20II%20-%20Recent%20Photo.jpg" alt="James Curtis Dilday II" class="headshot">
         <div class="header-text">
             <h1>James Curtis Dilday II</h1>
@@ -161,9 +206,21 @@
             </ul>
         </li>
     </ul>
-<!-- Featured Teaching Demonstration -->
-  
-    
+
+    <!-- Featured Teaching Demonstration -->
+    <h2>Featured Teaching Demonstration</h2>
+    <p>Clinical practice lesson in Secondary Chemistry ("The Combined Gas Law") submitted for the Moreland University Teacher Preparation Program.</p>
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; margin-bottom: 25px;">
+        <iframe 
+            src="https://www.youtube.com/embed/RdWtwEONsT4" 
+            title="James Curtis Dilday II - Secondary Chemistry Teaching Demonstration" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        </iframe>
+    </div>
+
     <!-- Work Experience -->
     <h2>Work Experience</h2>
 
